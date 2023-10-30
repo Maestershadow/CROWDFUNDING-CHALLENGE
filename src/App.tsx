@@ -10,17 +10,17 @@ function App() {
     <>
       <Heading />
       <main className='main-container'>
-        <div className='card-div'>
-          <div className='hovering-card'>
+        <div className='covering-container'>
+          <div className='card-div'>
             <ProjectCard />
-            </div>
-          <BackersCard />
-          <AboutCard />
+            <BackersCard />
+            <AboutCard />
+          </div>
         </div>
-          
-      </main> 
+
+      </main>
     </>
-     
+
   )
 }
 

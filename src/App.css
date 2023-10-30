@@ -18,35 +18,20 @@
   place-content: center;
 }
 
+.covering-container
+{
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .card-div
 {
-  padding-top: 8.5rem;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 5rem;
-}
-
-.hovering-card
-{
-  position: absolute;
-  top: -8rem;
-}
-
-
-@media (max-width: 39.8rem) {
-  .card-div
-  {
-    padding-top: 12.5rem; 
-  }
-}
-
-
-@media (max-width: 23.5rem)
-{
-  .card-div
-  {
-    padding-top: 14rem;
-  }
+  top: -4rem;
 }
