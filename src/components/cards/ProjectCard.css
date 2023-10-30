@@ -1,0 +1,340 @@
+.project-card {
+    position: relative;
+    background-color: var(--clr-white);
+    box-shadow: 1px 1px 10px #14141450;
+    border-radius: 1rem;
+    display: grid;
+    grid-auto-flow: row;
+    width: var(--content-max-width);
+    padding: 2.5rem;
+    gap: 2.3rem;
+    text-align: center;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    background-image: url('/images/logo-mastercraft.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -2.5rem;
+    left: 45%;
+}
+
+
+.project-card>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.bookmark-btn {
+    color: var(--clr-dark-gray);
+    background-color: hsla(0, 0%, 48%, 0.144);
+    display: flex;
+    align-items: center;
+    border-radius: 10rem;
+    padding: 0;
+    gap: 1rem;
+    padding-right: 2rem;
+    font-weight: var(--fw-500);
+}
+
+@media (max-width: 33rem) {
+    .project-card {
+        grid-auto-flow: row;
+        width: var(--content-max-width);
+        text-align: center;
+
+    }
+
+    .project-card::after {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+
+
+
+    .project-card>div:first-of-type {
+
+        gap: 0.8rem;
+    }
+
+    .button-container {
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .bookmark-btn>span {
+        display: none;
+    }
+
+    .bookmark-btn {
+        padding: 0;
+    }
+
+}
+
+.modal {
+    max-width: var(--content-max-width);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: white;
+    padding: 1.5rem;
+    border: 0;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    align-items: start;
+    font-family: var(--ff-base);
+
+}
+
+.top-content {
+    display: grid;
+    grid-template-areas:
+        "radio-btn pledge-heading modal-total-left"
+        "... top-content-p top-content-p"
+    ;
+    padding: 1.2rem;
+    row-gap: 1rem;
+    grid-template-columns: 3rem auto 3rem;
+    grid-template-rows: auto;
+}
+
+.pledge-heading {
+    grid-area: pledge-heading;
+    gap: 0.8rem;
+    display: flex;
+    color: var(--clr-moderate-cyan);
+    font-weight: var(--fw-500);
+}
+
+
+
+.modal-total-left {
+    display: flex;
+    gap: 0.3rem;
+    grid-area: modal-total-left;
+    font-weight: var(--fw-700);
+    font-size: 0.92rem;
+    justify-self: end;
+
+}
+
+.modal-total-left>span {
+    color: var(--clr-dark-gray);
+    font-weight: var(--fw-500);
+}
+
+.top-content>input[type="radio"] {
+    grid-area: radio-btn;
+    height: 1rem;
+    width: 1rem;
+    accent-color:var(--clr-dark-cyan) ;
+}
+
+
+.top-content-p {
+    grid-area: top-content-p;
+    font-size: var(--fs-100);
+    font-weight: var(--fw-500);
+    color: var(--clr-dark-gray);
+    text-align: justify;
+}
+
+
+@media (max-width: 43rem) {
+    .top-content {
+        grid-template-areas:
+            "radio-btn pledge-heading"
+            "top-content-p top-content-p"
+            "modal-total-left modal-total-left"
+        ;
+        grid-template-columns: 2.2rem auto;
+    }
+
+    .pledge-heading {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-self: center;
+    }
+
+    .modal-total-left {
+        width: 100%;
+    }
+
+    .top-content>input[type="radio"] {
+       align-self: center;
+    }
+
+}
+
+
+/* Scrollbar customization */
+.modal::-webkit-scrollbar {
+    width: .4rem;
+}
+
+.modal::-webkit-scrollbar-track {
+
+    background-color: hsla(0, 0%, 48%, 0.178);
+
+    border-radius: 0.4rem;
+}
+
+
+.modal::-webkit-scrollbar-thumb {
+    border-radius: 0.4rem;
+    background-color: var(--clr-moderate-cyan);
+}
+
+
+
+.modal:not([open]) {
+    display: none;
+}
+
+
+.modal::backdrop {
+    background: rgb(0 0 0 / 0.5);
+}
+
+.modal-heading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-heading>h2 {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-700);
+}
+
+.modal-sub-heading {
+    font-size: var(--fs-100);
+    color: var(--clr-dark-gray);
+}
+
+.modal-card-content {
+    border: 1px solid var(--clr-dark-gray);
+    border-radius: 0.5rem;
+    text-align: start;
+}
+
+
+
+
+.modal-card-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-pledge-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--clr-dark-gray);
+    padding: 1rem;
+    color: var(--clr-dark-gray);
+}
+
+@media (max-width: 42rem) {
+    .modal-pledge-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.p-sect {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+
+}
+
+.p-sect>div {
+    display: flex;
+    gap: 0.3rem;
+    border: 1px solid var(--clr-dark-gray);
+    padding: 0.3rem 1.1rem;
+    border-radius: 10rem;
+    font-weight: var(--fw-700);
+    align-items: center;
+}
+
+textarea {
+    width: 1.5rem;
+    height: 1rem;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: var(--fs-100);
+    color: var(--clr-black);
+    font-weight: var(--fw-700);
+}
+
+.p-sect>div>span {
+    color: var(--clr-dark-gray);
+}
+
+
+
+
+
+.modal-card-content[data-selected="true"] {
+    border: 2px solid var(--clr-moderate-cyan);
+}
+
+.pledge-heading-title {
+    font-weight: var(--fw-700);
+    color: var(--clr-black);
+    cursor: pointer;
+}
+
+.pledge-heading-title:hover {
+    color: var(--clr-moderate-cyan);
+}
+
+.completed-modal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.completed-modal>h2 {
+    font-size: var(--fs-250);
+    font-weight: var(--fw-700);
+}
+
+.completed-modal>p {
+    color: var(--clr-dark-gray);
+}
+
+.completed-modal>img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.modal[data-completed-modal="true"] {
+    max-width: min(25rem, var(--content-max-width));
+}

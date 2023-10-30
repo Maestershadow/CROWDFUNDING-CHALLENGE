@@ -1,0 +1,12 @@
+.button
+{
+    font-size: var(--fs-100);
+    background-color: var( --clr-moderate-cyan);
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+}
+
+.button:hover
+{
+    background-color: var( --clr-dark-cyan);
+}
